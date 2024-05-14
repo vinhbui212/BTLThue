@@ -1,0 +1,23 @@
+<!-- upload.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:insert="fragment.html :: header (pageTitle='Đăng nhập')"></head>
+<body>
+<div class="main">
+    <div th:insert="fragment.html :: sidebar"></div>
+    <div class="content">
+<h1>Nộp minh chứng</h1>
+<form action="#" th:action="@{/upload}" method="post" enctype="multipart/form-data">
+    <label for="toKhaiThueId">Tờ khai số:</label>
+    <input type="text" id="toKhaiThueId" name="toKhaiThueId" th:value="${toKhaiThueId}"/>
+    <br/>
+    <label for="file">Ảnh minh chứng:</label>
+    <input type="file" id="file" name="file"/>
+    <br/>
+    <button type="submit">Upload</button>
+</form>
+<p th:if="${message}" th:text="${message}"></p>
+
+</div>
+</body>
+</html>
